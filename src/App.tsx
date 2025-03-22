@@ -173,8 +173,8 @@ function App() {
               <div className="bg-white p-3 rounded-xl w-fit mb-4">
                 <Grid className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Career Portfolio</h3>
-              <p className="text-gray-600">Build and showcase your professional portfolio with our expert tools.</p>
+              <h3 className="text-xl font-bold mb-2">AI-Powered</h3>
+              <p className="text-gray-600">Harness intelligent algorithms for personalized career insights and data-driven guidance to elevate your professional journey.</p>
             </motion.div>
 
             <motion.div
@@ -186,8 +186,8 @@ function App() {
               <div className="bg-white p-3 rounded-xl w-fit mb-4">
                 <Users className="w-6 h-6 text-pink-600" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Mentorship</h3>
-              <p className="text-gray-600">Connect with industry experts for personalized career guidance.</p>
+              <h3 className="text-xl font-bold mb-2">Job Recommendation</h3>
+              <p className="text-gray-600">Find your ideal career matches with AI-driven suggestions tailored to your skills, goals, and market trends.</p>
             </motion.div>
 
             <motion.div
@@ -199,8 +199,8 @@ function App() {
               <div className="bg-white p-3 rounded-xl w-fit mb-4">
                 <ShoppingCart className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Resources</h3>
-              <p className="text-gray-600">Access premium career development resources and tools.</p>
+              <h3 className="text-xl font-bold mb-2">Skill Enhancement</h3>
+              <p className="text-gray-600">Boost your expertise with AI-curated learning paths to stay ahead in a competitive job market.</p>
             </motion.div>
           </div>
         </div>
