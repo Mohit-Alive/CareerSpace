@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Grid, Users, ShoppingCart, Play, Star, ChevronDown } from 'lucide-react';
+import { Brain,BookOpen , Users, ShoppingCart, Play, Star, ChevronDown } from 'lucide-react';
 
 function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -73,10 +73,10 @@ function App() {
               <span className="text-black">Professional Growth</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Turn Your Skills into
+              Transform skills into success
               <br />
               <span className="relative">
-                Career Success
+                with AI-powered guidance
                 <motion.div
                   className="absolute -bottom-2 left-0 w-full h-1 bg-pink-400"
                   initial={{ width: 0 }}
@@ -171,7 +171,8 @@ function App() {
               className="bg-[#F8F3FF] p-8 rounded-2xl"
             >
               <div className="bg-white p-3 rounded-xl w-fit mb-4">
-                <Grid className="w-6 h-6 text-purple-600" />
+                <Brain className="w-6 h-6 text-purple-600" />
+                
               </div>
               <h3 className="text-xl font-bold mb-2">AI-Powered</h3>
               <p className="text-gray-600">Harness intelligent algorithms for personalized career insights and data-driven guidance to elevate your professional journey.</p>
@@ -197,7 +198,7 @@ function App() {
               className="bg-[#F3F8FF] p-8 rounded-2xl"
             >
               <div className="bg-white p-3 rounded-xl w-fit mb-4">
-                <ShoppingCart className="w-6 h-6 text-blue-600" />
+                <BookOpen className="w-6 h-6 text-blue-600" />
               </div>
               <h3 className="text-xl font-bold mb-2">Skill Enhancement</h3>
               <p className="text-gray-600">Boost your expertise with AI-curated learning paths to stay ahead in a competitive job market.</p>
@@ -388,7 +389,7 @@ function App() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 flex justify-between items-center">
-            <div className="text-gray-400">© 2024 CareerSpace. All rights reserved.</div>
+            <div className="text-gray-400">© 2025 CareerSpace. All rights reserved.</div>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-400 hover:text-white">Privacy Policy</a>
               <a href="#" className="text-gray-400 hover:text-white">Terms of Service</a>
