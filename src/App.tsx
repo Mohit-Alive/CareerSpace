@@ -86,7 +86,7 @@ function App() {
               </span>
             </h1>
             <p className="text-gray-600 mb-8 text-lg">
-              Transform your professional journey with expert guidance, personalized mentoring, and industry-leading resources.
+            Revolutionize your career path with AI-powered guidance, tailored mentorship, and cutting-edge resources designed to unlock your full potential.
             </p>
             <div className="flex items-center space-x-4">
               <motion.button
