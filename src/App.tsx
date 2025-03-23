@@ -1,47 +1,51 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Brain,BookOpen , Users, ShoppingCart, Play, Star, ChevronDown } from 'lucide-react';
+import { Brain,BookOpen , Users, Map, BrainCircuit, SquareUser, Star, ChevronDown } from 'lucide-react';
 
 function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const faqs = [
     {
-      question: "How does career counseling work?",
-      answer: "Our career counseling process involves one-on-one sessions with expert counselors who assess your skills, interests, and goals. We then create a personalized career development plan tailored to your needs."
+      question: "How accurate are the career recommendations provided by the AI?",
+      answer: "Our AI leverages the latest advancements in machine learning and is trained on vast datasets of job market trends, skill requirements, and career paths. While the recommendations are highly accurate, we encourage users to use them as a starting point and conduct further research or consult with a career advisor for personalized guidance."
     },
     {
-      question: "What industries do you specialize in?",
-      answer: "We cover a wide range of industries including technology, healthcare, finance, creative arts, education, and more. Our counselors have diverse backgrounds and expertise."
+      question: "Can I get recommendations for certifications or courses to improve my skills?",
+      answer: "Yes! Based on your profile and career goals, our AI can suggest relevant certifications, online courses, and training programs to help you acquire the skills needed for your desired job roles."
     },
     {
-      question: "How long does the counseling process take?",
-      answer: "The duration varies based on individual needs. Typically, clients see significant progress within 3-6 sessions, but we offer ongoing support for long-term career development."
+      question: "Does the AI consider my location when suggesting jobs?",
+      answer: "Yes, our AI can factor in your location (if provided) to recommend jobs that are geographically relevant. However, you can also choose to explore opportunities in other regions or remote roles if you're open to relocation or flexible work arrangements."
     },
     {
-      question: "What makes your service different?",
-      answer: "We combine traditional counseling with AI-powered analytics, providing data-driven insights alongside human expertise. Plus, our network of industry mentors offers real-world guidance."
+      question: "How often is the job market data updated?",
+      answer: "Our job market data is regularly updated to reflect the latest trends, job openings, and skill demands. This ensures that the recommendations you receive are based on the most current information available."
+    },
+    {
+      question: "Do you offer career guidance outside of computer science fields?",
+      answer: "For now, our focus is exclusively on guiding computer science students. However, we’re actively working to expand our AI’s capabilities to include more fields in the future. Stay tuned for updates!"
     }
   ];
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Software Engineer",
+      name: "Sachin Kuman Choubey",
+      role: "2nd Year Student",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
-      text: "The career guidance I received was transformative. Within 6 months, I successfully transitioned into tech."
+      text: "The AI-curated learning paths helped me master Python and data analysis in just a few months. I feel so much more confident in my technical skills now!"
     },
     {
-      name: "Michael Chen",
-      role: "Marketing Director",
+      name: "Mohit Kholiya",
+      role: "2nd Year Student",
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop",
-      text: "The mentorship program helped me climb the corporate ladder faster than I ever imagined possible."
+      text: "Thanks to the skill-building recommendations, I went from beginner to proficient in web development. The step-by-step guidance was exactly what I needed!"
     },
     {
-      name: "Emily Rodriguez",
-      role: "Healthcare Professional",
+      name: "Rahul Sharma",
+      role: "2nd Year Student",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop",
-      text: "Their industry insights and personalized guidance were invaluable in advancing my medical career."
+      text: "This platform helped me realize my passion for AI and machine learning. The personalized skill-building roadmap gave me clarity, and I’m now confidently working toward my dream career!"
     }
   ];
 
@@ -50,12 +54,12 @@ function App() {
       {/* Navigation */}
       <nav className="py-4 px-8">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold text-black">CareerSpace.</div>
+          <div className="text-2xl font-bold text-black">KshetriAI</div>
           <div className="hidden md:flex space-x-8">
-            <a href="#" className="text-gray-600 hover:text-black">About Us</a>
-            <a href="#" className="text-gray-600 hover:text-black">FAQ</a>
-            <a href="#" className="text-gray-600 hover:text-black">Pricing</a>
-            <a href="#" className="text-gray-600 hover:text-black">Contact Us</a>
+            <a href="#about" className="text-gray-600 hover:text-black">About Us</a>
+            <a href="#faq" className="text-gray-600 hover:text-black">FAQ</a>
+            <a href="#how" className="text-gray-600 hover:text-black">How it Works</a>
+            <a href="#contact" className="text-gray-600 hover:text-black">Contact Us</a>
           </div>
         </div>
       </nav>
@@ -69,7 +73,7 @@ function App() {
             className="lg:w-1/2"
           >
             <div className="flex items-center space-x-4 mb-6">
-              <span className="bg-black text-white px-4 py-1 rounded-full text-sm">Career Development</span>
+              <span className="bg-black text-white px-4 py-3 rounded-full text-sm">Career Development</span>
               <span className="text-black">Professional Growth</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -86,7 +90,7 @@ function App() {
               </span>
             </h1>
             <p className="text-gray-600 mb-8 text-lg">
-            Revolutionize your career path with AI-powered guidance, tailored mentorship, and cutting-edge resources designed to unlock your full potential.
+            Transform your future in tech with AI-powered career guidance, personalized mentorship, and cutting-edge resources designed to help you excel in computer science.
             </p>
             <div className="flex items-center space-x-4">
               <motion.button
@@ -96,7 +100,7 @@ function App() {
               >
                 Let's Get Started
               </motion.button>
-              <div className="flex items-center space-x-2">
+              {/* <div className="flex items-center space-x-2">
                 <div className="flex -space-x-4">
                   <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" className="w-10 h-10 rounded-full border-2 border-white" alt="User" />
                   <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" className="w-10 h-10 rounded-full border-2 border-white" alt="User" />
@@ -106,7 +110,7 @@ function App() {
                   <div className="font-semibold">125K+</div>
                   <div className="text-gray-500">Success Stories</div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
 
@@ -122,7 +126,7 @@ function App() {
                 className="rounded-2xl shadow-lg"
                 alt="Career Success"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg flex items-center space-x-4">
+              {/* <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg flex items-center space-x-4">
                 <div className="bg-pink-100 p-2 rounded-lg">
                   <Play className="w-6 h-6 text-pink-500" />
                 </div>
@@ -130,7 +134,7 @@ function App() {
                   <div className="font-semibold">Watch Demo</div>
                   <div className="text-sm text-gray-500">2 min video</div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
@@ -141,10 +145,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { number: "95%", text: "Success Rate" },
-              { number: "500+", text: "Expert Counselors" },
-              { number: "50K+", text: "Career Transitions" },
-              { number: "100+", text: "Partner Companies" }
+              { number: "AI Insights", text: "Get hyper-personalized career insights tailored to your skills and goals." },
+              { number: "Tech Resources", text: "Access the latest tools and learning paths to stay ahead in tech." },
+              { number: "Career Ready", text: "Prepare for the most in-demand roles in computer science and beyond." },
+              { number: "Personalized", text: "Tailored recommendations and insights based on your unique skills, goals, and resume." }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -153,7 +157,7 @@ function App() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl font-bold mb-2">{stat.number}</div>
+                <div className="text-3xl font-bold mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.text}</div>
               </motion.div>
             ))}
@@ -162,7 +166,7 @@ function App() {
       </div>
 
       {/* Features Section */}
-      <div className="bg-white py-20">
+      <div id='about' className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div
@@ -202,6 +206,42 @@ function App() {
               </div>
               <h3 className="text-xl font-bold mb-2">Skill Enhancement</h3>
               <p className="text-gray-600">Boost your expertise with AI-curated learning paths to stay ahead in a competitive job market.</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-[#FFF3F8] p-8 rounded-2xl"
+            >
+              <div className="bg-white p-3 rounded-xl w-fit mb-4">
+                <Map className="w-6 h-6 text-pink-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Career Roadmap</h3>
+              <p className="text-gray-600">Get a step-by-step career plan designed by AI, including milestones, skill-building opportunities, and actionable steps to achieve your professional goals.</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="bg-[#F3F8FF] p-8 rounded-2xl"
+            >
+              <div className="bg-white p-3 rounded-xl w-fit mb-4">
+                <BrainCircuit className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Personalized Mentorship</h3>
+              <p className="text-gray-600">Access tailored mentorship recommendations and resources to guide you through your career journey with expert insights and support.</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-[#FFF3F8] p-8 rounded-2xl"
+            >
+              <div className="bg-white p-3 rounded-xl w-fit mb-4">
+                <SquareUser className="w-6 h-6 text-pink-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Interview Preparation</h3>
+              <p className="text-gray-600">Ace your interviews with AI-generated practice questions, tips, and strategies tailored to your target job roles and industries.</p>
             </motion.div>
           </div>
         </div>
@@ -243,7 +283,7 @@ function App() {
       </div>
 
       {/* How It Works Section */}
-      <div className="py-20">
+      <div id='how' className="py-20">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">How It Works</h2>
@@ -252,9 +292,9 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { step: '01', title: 'Create Profile', desc: 'Build your professional profile' },
-              { step: '02', title: 'Match Mentor', desc: 'Get matched with expert mentors' },
-              { step: '03', title: 'Grow Career', desc: 'Achieve your career goals' }
+              { step: '01', title: 'Upload Resume', desc: 'Upload your resume, and let our AI analyze your profile to provide personalized insights' },
+              { step: '02', title: 'Get AI Recommendations', desc: 'Receive tailored job suggestions, skill enhancement tips, and career opportunities' },
+              { step: '03', title: 'Take Action', desc: 'Follow AI-curated learning paths, optimize your resume, and apply for roles' }
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -273,7 +313,7 @@ function App() {
       </div>
 
       {/* FAQ Section */}
-      <div className="py-20 bg-white">
+      <div id='faq' className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
@@ -317,14 +357,14 @@ function App() {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Career?</h2>
-              <p className="text-gray-400">Join thousands of professionals who've already taken the first step towards their dream career.</p>
+              <p className="text-gray-400">Start your journey today and discover the perfect career path in computer science with AI-driven insights and personalized guidance.</p>
             </div>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-black px-8 py-4 rounded-xl font-semibold"
             >
-              Schedule Free Consultation
+              Get Started for Free
             </motion.button>
           </div>
         </div>
@@ -334,7 +374,7 @@ function App() {
       <div className="bg-black text-white py-20">
         <div className="max-w-3xl mx-auto px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Start Your Career Journey Today</h2>
-          <p className="text-gray-400 mb-8">Join thousands of professionals who've transformed their careers with us.</p>
+          <p className="text-gray-400 mb-8">Take the first step toward your dream career in computer science and unlock your potential with AI-powered guidance.</p>
           <div className="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
@@ -353,12 +393,12 @@ function App() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-20 border-t border-gray-800">
+      <footer id='contact' className="bg-black text-white py-20 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div>
-              <div className="text-2xl font-bold mb-4">CareerSpace.</div>
-              <p className="text-gray-400">Empowering professionals to reach their full potential through expert career guidance.</p>
+              <div className="text-2xl font-bold mb-4">KshetriAI.</div>
+              <p className="text-gray-400">Empowering professionals to reach their full potential through expert career guidance using AI.</p>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
@@ -381,15 +421,15 @@ function App() {
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2">
-                <li className="text-gray-400">1234 Career Street</li>
-                <li className="text-gray-400">Suite 567</li>
-                <li className="text-gray-400">San Francisco, CA 94105</li>
-                <li><a href="mailto:hello@careerspace.com" className="text-gray-400 hover:text-white">hello@careerspace.com</a></li>
+                <li className="text-gray-400"> Manav Rachna Campus Rd</li>
+                <li className="text-gray-400">Sector 43</li>
+                <li className="text-gray-400">Faridabad, Haryana</li>
+                <li><a href="mailto:hello@KshetriAI.com" className="text-gray-400 hover:text-white">hello@KshetriAI.com</a></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 flex justify-between items-center">
-            <div className="text-gray-400">© 2025 CareerSpace. All rights reserved.</div>
+            <div className="text-gray-400">© 2025 KshetriAI. All rights reserved.</div>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-400 hover:text-white">Privacy Policy</a>
               <a href="#" className="text-gray-400 hover:text-white">Terms of Service</a>
