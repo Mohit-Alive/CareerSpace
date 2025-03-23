@@ -32,19 +32,19 @@ function App() {
     {
       name: "Sachin Kuman Choubey",
       role: "2nd Year Student",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+      image: "https://res.cloudinary.com/ddsjmwxh9/image/upload/v1742730453/1721812798830_vpieat.jpg",
       text: "The AI-curated learning paths helped me master Python and data analysis in just a few months. I feel so much more confident in my technical skills now!"
     },
     {
       name: "Mohit Kholiya",
       role: "2nd Year Student",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop",
+      image: "https://res.cloudinary.com/ddsjmwxh9/image/upload/v1742730246/Me_k0ai6z.jpg",
       text: "Thanks to the skill-building recommendations, I went from beginner to proficient in web development. The step-by-step guidance was exactly what I needed!"
     },
     {
-      name: "Rahul Sharma",
-      role: "2nd Year Student",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop",
+      name: "Anand Panda",
+      role: "3rd Year Student",
+      image: "https://res.cloudinary.com/ddsjmwxh9/image/upload/v1742730903/anand2_enjnje.jpg",
       text: "This platform helped me realize my passion for AI and machine learning. The personalized skill-building roadmap gave me clarity, and I’m now confidently working toward my dream career!"
     }
   ];
