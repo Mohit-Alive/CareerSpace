@@ -44,7 +44,7 @@ function App() {
     {
       name: "Anand Panda",
       role: "3rd Year Student",
-      image: "https://res.cloudinary.com/ddsjmwxh9/image/upload/v1742730903/anand2_enjnje.jpg",
+      image: "https://res.cloudinary.com/ddsjmwxh9/image/upload/v1742731124/anand2_liceoy.jpg",
       text: "This platform helped me realize my passion for AI and machine learning. The personalized skill-building roadmap gave me clarity, and I’m now confidently working toward my dream career!"
     }
   ];
