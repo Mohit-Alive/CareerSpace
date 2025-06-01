@@ -1,9 +1,43 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Brain,BookOpen , Users, Map, BrainCircuit, SquareUser, Star, ChevronDown } from 'lucide-react';
+import { Brain,BookOpen , Users, Map, BrainCircuit, SquareUser, Star, ChevronDown, MapPin, Phone, Mail, Globe } from 'lucide-react';
 
 function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const handleSubscribe = () => {
+    setEmailError('');
+    if (!email) {
+      setEmailError('Please enter your email address');
+      return;
+    }
+    if (!validateEmail(email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
+    // Mocking api call
+    setIsSubscribed(true);
+    setEmail('');
+  
+    setTimeout(() => {
+      setIsSubscribed(false);
+    }, 3000);
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    if (emailError) {
+      setEmailError('');
+    }
+  };
 
   const faqs = [
     {
@@ -24,7 +58,7 @@ function App() {
     },
     {
       question: "Do you offer career guidance outside of computer science fields?",
-      answer: "For now, our focus is exclusively on guiding computer science students. However, we’re actively working to expand our AI’s capabilities to include more fields in the future. Stay tuned for updates!"
+      answer: "For now, our focus is exclusively on guiding computer science students. However, we're actively working to expand our AI's capabilities to include more fields in the future. Stay tuned for updates!"
     }
   ];
 
@@ -45,7 +79,7 @@ function App() {
       name: "Anand Panda",
       role: "3rd Year Student",
       image: "https://res.cloudinary.com/ddsjmwxh9/image/upload/v1742731124/anand2_liceoy.jpg",
-      text: "This platform helped me realize my passion for AI and machine learning. The personalized skill-building roadmap gave me clarity, and I’m now confidently working toward my dream career!"
+      text: "This platform helped me realize my passion for AI and machine learning. The personalized skill-building roadmap gave me clarity, and I'm now confidently working toward my dream career!"
     }
   ];
 
@@ -376,19 +410,38 @@ function App() {
           <h2 className="text-3xl font-bold mb-4">Start Your Career Journey Today</h2>
           <p className="text-gray-400 mb-8">Take the first step toward your dream career in computer science and unlock your potential with AI-powered guidance.</p>
           <div className="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-xl bg-gray-800 text-white"
-            />
+            <div className="flex-1">
+              <input
+                type="email"
+                value={email}
+                onChange={handleEmailChange}
+                placeholder="Enter your email"
+                className={`w-full px-4 py-3 rounded-xl bg-gray-800 text-white ${
+                  emailError ? 'border-2 border-red-500' : ''
+                }`}
+              />
+              {emailError && (
+                <p className="text-red-500 text-sm mt-1 text-left">{emailError}</p>
+              )}
+            </div>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-black px-6 py-3 rounded-xl font-semibold"
+              onClick={handleSubscribe}
+              className="bg-white text-black px-6 py-3 rounded-xl font-semibold whitespace-nowrap"
             >
               Subscribe
             </motion.button>
           </div>
+          {isSubscribed && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-4 text-green-400"
+            >
+              Thank you for subscribing! We'll keep you updated with the latest career insights.
+            </motion.div>
+          )}
         </div>
       </div>
 
@@ -420,11 +473,23 @@ function App() {
             </div>
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li className="text-gray-400"> Manav Rachna Campus Rd</li>
-                <li className="text-gray-400">Sector 43</li>
-                <li className="text-gray-400">Faridabad, Haryana</li>
-                <li><a href="mailto:hello@KshetriAI.com" className="text-gray-400 hover:text-white">hello@KshetriAI.com</a></li>
+              <ul className="space-y-4">
+                <li className="flex items-center space-x-3 text-gray-400">
+                  <MapPin className="w-5 h-5" />
+                  <span>Manav Rachna Campus Rd, Sector 43, Faridabad, Haryana</span>
+                </li>
+                <li className="flex items-center space-x-3 text-gray-400">
+  <Phone className="w-5 h-5" />
+  <a href="tel:+919876543210" className="hover:text-white transition-colors">+91 98765 43210</a>
+</li>
+                <li className="flex items-center space-x-3 text-gray-400">
+                  <Mail className="w-5 h-5" />
+                  <a href="mailto:hello@KshetriAI.com" className="hover:text-white transition-colors">hello@KshetriAI.com</a>
+                </li>
+                <li className="flex items-center space-x-3 text-gray-400">
+                  <Globe className="w-5 h-5" />
+                  <a href="https://kshetriai.com" className="hover:text-white transition-colors">www.kshetriai.com</a>
+                </li>
               </ul>
             </div>
           </div>
